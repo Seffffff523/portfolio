@@ -7,7 +7,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" data-theme="luxury">
+    <html lang="en" data-theme="garden">
       <body className=" transition-colors duration-500">
         <ThemeToggle />
         {children}

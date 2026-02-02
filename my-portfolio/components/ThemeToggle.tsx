@@ -6,7 +6,7 @@ export default function ThemeToggle() {
   const [theme, setTheme] = useState<"light" | "dark">("light");
 
   const setDataTheme = (mode: "light" | "dark") => {
-    const daisyTheme = mode === "light" ? "garden" : "luxury";
+    const daisyTheme = mode === "light" ? "garden" : "night";
     document.documentElement.setAttribute("data-theme", daisyTheme);
   };
   useEffect(() => {
