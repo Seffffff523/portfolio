@@ -1,10 +1,10 @@
-import ThemeToggle from "../components/ThemeToggle";
+// import ThemeToggle from "../components/ThemeToggle";
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-white text-black dark:bg-gray-900 dark:text-white transition-colors duration-500">
+    <div className="min-h-screen transition-colors duration-500">
       {/* Theme toggle button */}
-      <ThemeToggle />
+      {/* <ThemeToggle /> */}
 
       <header className="p-8 text-center">
         <h1 className="text-5xl font-bold mb-4">Dark/Light Mode Demo</h1>
@@ -25,7 +25,7 @@ export default function HomePage() {
         </div>
       </main>
 
-      <footer className="p-8 text-center text-sm text-gray-600 dark:text-gray-400">
+      <footer className="p-8 text-center text-sm ">
         &copy; 2026 Dark Mode Example
       </footer>
     </div>

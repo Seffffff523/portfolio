@@ -1,6 +1,6 @@
 "use client";
 
-import ThemeToggle from "./ThemeToggle";
+// import ThemeToggle from "./ThemeToggle";
 
 const links = [
   { name: "About", href: "#about" },
@@ -34,7 +34,7 @@ export default function Navbar() {
       </ul>
 
       <div className="mt-auto">
-        <ThemeToggle />
+        {/* <ThemeToggle /> */}
       </div>
     </nav>
   );

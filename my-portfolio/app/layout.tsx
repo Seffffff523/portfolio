@@ -1,4 +1,5 @@
 import "./globals.css";
+import ThemeToggle from "@/components/ThemeToggle";
 
 export default function RootLayout({
   children,
@@ -6,8 +7,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className="bg-white text-black dark:bg-gray-900 dark:text-white transition-colors duration-500">
+    <html lang="en" data-theme="luxury">
+      <body className=" transition-colors duration-500">
+        <ThemeToggle />
         {children}
       </body>
     </html>
