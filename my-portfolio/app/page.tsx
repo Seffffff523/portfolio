@@ -4,7 +4,8 @@ export default function Home() {
       <div className="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 lg:grid-cols-[320px_1fr] gap-16">
 
         {/* LEFT SIDEBAR */}
-        <aside className="lg:h-screen overflow-y-auto flex flex-col items-start gap-6">
+        <aside className="lg:sticky lg:top-0 flex flex-col items-start gap-6">
+
 
           {/* Theme Toggle */}
           <div className="absolute top-0 right-0">
