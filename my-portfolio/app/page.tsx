@@ -67,10 +67,7 @@ export default function Home() {
           {/* ABOUT */}
           <section id="about" className="space-y-6">
             <p className="text-base-content/80 leading-loose max-w-2xl">
-              I’m a web developer and engineering student with a passion for
-              building clean, accessible, and responsive applications. I enjoy
-              turning ideas into real products through thoughtful design and
-              well-structured code.
+              I'm a front end developer 
             </p>
 
             <p className="text-base-content/70 leading-loose max-w-2xl">
