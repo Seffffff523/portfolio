@@ -9,12 +9,20 @@ export default function ProjectsSection() {
       href: "https://sites.google.com/view/vlog-01",
     },
     {
-      title: "Sample Project",
+      title: "Mactan Newtown Virtual Tour",
       description:
-        "A responsive web application built with modern tools and clean UI principles.",
-      stack: "React, Tailwind, Vite",
-      image: "",
-      href: "https://example.com",
+        "My first successful virtual tour project enabled users to explore locations remotely through immersive 360° panoramas. With smooth navigation and an interactive side UI, users could easily move between scenes, look around freely, and engage with key points of interest for a more dynamic online experience.",
+      stack: "XML, HTML5, CSS3, JavaScript",
+      image: "/images/mactan.gif",
+      href: "https://www.mata.ph/mactannewtown",
+    },
+    {
+      title: "BFP Fire Simulation",
+      description:
+        "The BFP Fire Simulation is an interactive game that teaches people what to do during a fire emergency through realistic, hands-on scenarios. It makes fire safety more engaging and memorable than traditional lectures, especially for those who learn better by playing",
+      stack: "XML, HTML5, CSS3, JavaScript",
+      image: "/images/bfp.gif",
+      href: "https://www.mata.ph/bfp",
     },
   ];
 const openLink = (href: string) => {
