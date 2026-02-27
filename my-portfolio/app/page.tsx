@@ -6,6 +6,7 @@ import AboutSection from '@/components/home/About';
 import ProjectsSection from '@/components/home/Project';
 import ExperienceSection from '@/components/home/Experience';
 import ContactSection from '@/components/home/Contact';
+import ScrollReveal from '@/components/ui/ScrollReveal';
 
 
 export default function HomePage() {
@@ -58,11 +59,22 @@ export default function HomePage() {
         </aside>
 
         {/* ✅ no overflow-y-auto here */}
-        <section className="space-y-24 pb-24 pt-10 pl-10">
-          <AboutSection />
-          <ProjectsSection />
-          <ExperienceSection />
-          <ContactSection />
+       <section className="space-y-24 pb-24 pt-10 pl-10">
+          <ScrollReveal>
+            <AboutSection />
+          </ScrollReveal>
+
+          <ScrollReveal delayMs={80}>
+            <ProjectsSection />
+          </ScrollReveal>
+
+          <ScrollReveal delayMs={120}>
+            <ExperienceSection />
+          </ScrollReveal>
+
+          <ScrollReveal delayMs={160}>
+            <ContactSection />
+          </ScrollReveal>
         </section>
       </div>
     </main>
