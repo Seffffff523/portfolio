@@ -52,6 +52,7 @@ export default function HomePage() {
   }, [navItems]);
 
   return (
+    
     <main className="min-h-screen bg-base-100 text-base-content scroll-smooth">
       <div className="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 lg:grid-cols-[320px_1fr] gap-16">
         <aside className="lg:sticky lg:top-8 self-start">

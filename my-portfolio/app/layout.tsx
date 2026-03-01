@@ -1,5 +1,10 @@
 import "./globals.css";
 
+export const metadata = {
+  title: "Yousef Laurence Abayan",
+  description: "My portfolio website",
+  icons: { icon: "/images/favicon.png" }
+};
 
 export default function RootLayout({
   children,
