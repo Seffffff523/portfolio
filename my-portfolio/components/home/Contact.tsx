@@ -31,8 +31,8 @@ export default function ContactSection() {
   }
 
   return (
-    <section id="contact" className="scroll-mt-24">
-      <h2 className="text-xl font-semibold mb-6">Contact</h2>
+    <section id="contact" className="scroll-mt-28 py-10 mb-24">
+      <h2 className="text-xl font-semibold mb-6 pt-10">Contact</h2>
 
       <div className="w-full flex justify-center px-6">
         <form onSubmit={onSubmit} className="w-full max-w-2xl space-y-5">

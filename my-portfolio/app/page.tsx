@@ -59,12 +59,12 @@ export default function HomePage() {
         </aside>
 
         {/* ✅ no overflow-y-auto here */}
-       <section className="space-y-24 pb-24 pt-10 pl-10">
-          <ScrollReveal>
+       <section className="space-y-28 pb-34 pt-10 pl-10">
+          <ScrollReveal delayMs={40}>
             <AboutSection />
           </ScrollReveal>
 
-          <ScrollReveal delayMs={80}>
+          <ScrollReveal delayMs={100}>
             <ProjectsSection />
           </ScrollReveal>
 

@@ -20,9 +20,17 @@ export default function ProjectsSection() {
       title: "BFP Fire Simulation",
       description:
         "The BFP Fire Simulation is an interactive game that teaches people what to do during a fire emergency through realistic, hands-on scenarios. It makes fire safety more engaging and memorable than traditional lectures, especially for those who learn better by playing",
-      stack: "XML, HTML5, CSS3, JavaScript",
+      stack: "C#",
       image: "/images/bfp.gif",
       href: "https://www.mata.ph/bfp",
+    },
+    {
+      title: "Costavida 3d Modeling",
+      description:
+        "For the Costavida 3d Modeling, my team and I created a detailed 3D model of the building and seamlessly superimposed it onto a 360° panoramic image of the site to make it appear fully constructed within its real-world environment, with the final render showcased in the Mactan Newtown Virtual Tour.",
+      stack: "XML, HTML5, CSS3, JavaScript",
+      image: "/images/costa.gif",
+      href: "https://www.mata.ph/mactannewtown",
     },
   ];
 const openLink = (href: string) => {
