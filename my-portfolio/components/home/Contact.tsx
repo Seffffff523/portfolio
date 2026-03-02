@@ -3,7 +3,7 @@
 import { useState } from 'react';
 
 export default function ContactSection() {
-  const API_URL =
+  const API_URL = "/api/contact";
   process.env.NEXT_PUBLIC_CONTACT_API_URL || 'http://localhost:8788/api/contact';
 
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
