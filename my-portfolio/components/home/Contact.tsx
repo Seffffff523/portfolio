@@ -3,7 +3,8 @@
 import { useState } from 'react';
 
 export default function ContactSection() {
-  const FORMSPREE_URL = 'https://formspree.io/f/mykdnbal'; // ✅ replace
+  const API_URL =
+  process.env.NEXT_PUBLIC_CONTACT_API_URL || 'http://localhost:8788/api/contact';
 
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
 
@@ -14,14 +15,21 @@ export default function ContactSection() {
     const form = e.currentTarget;
     const fd = new FormData(form);
 
+    const payload = {
+      name: String(fd.get('name') || ''),
+      email: String(fd.get('email') || ''),
+      message: String(fd.get('message') || ''),
+    };
+
     try {
-      const res = await fetch(FORMSPREE_URL, {
+      const res = await fetch(API_URL, {
         method: 'POST',
-        headers: { Accept: 'application/json' },
-        body: fd,
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
       });
 
-      if (!res.ok) throw new Error('Failed');
+      const json = await res.json().catch(() => ({}));
+      if (!res.ok || !json.ok) throw new Error(json.error || 'Failed');
 
       setStatus('sent');
       form.reset();
@@ -60,18 +68,13 @@ export default function ContactSection() {
                 required
               />
 
-              {/* Optional subject for your inbox */}
-              <input type="hidden" name="_subject" value="New portfolio message" />
-
               <div className="flex items-center gap-4 pt-2">
                 <button className="btn btn-warning" type="submit" disabled={status === 'sending'}>
                   {status === 'sending' ? 'Sending...' : 'Send Message'}
                 </button>
 
                 {status === 'sent' && <span className="text-sm text-success">Sent!</span>}
-                {status === 'error' && (
-                  <span className="text-sm text-error">Failed. Try again.</span>
-                )}
+                {status === 'error' && <span className="text-sm text-error">Failed. Try again.</span>}
               </div>
             </div>
           </div>
