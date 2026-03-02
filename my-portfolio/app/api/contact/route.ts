@@ -10,8 +10,8 @@ export async function POST(req: Request) {
 
     const transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST,
-      port: Number(process.env.SMTP_PORT || 587),
-      secure: process.env.SMTP_SECURE === "true", // true if 465
+      port: Number(process.env.SMTP_PORT || 465),
+      secure: process.env.SMTP_SECURE === "true",
       auth: {
         user: process.env.SMTP_USER,
         pass: process.env.SMTP_PASS,
@@ -28,14 +28,9 @@ export async function POST(req: Request) {
 
     return Response.json({ ok: true });
   } catch (err: any) {
-    const transporter = nodemailer.createTransport({
-  host: process.env.SMTP_HOST,
-  port: Number(process.env.SMTP_PORT || 465),
-  secure: process.env.SMTP_SECURE === "true", // true
-  auth: { user: process.env.SMTP_USER, pass: process.env.SMTP_PASS },
-    });
+    console.error("MAIL ERROR:", err);
     return Response.json(
-      { ok: false, error: err?.message || "Failed to send" },
+      { ok: false, error: err?.message || "Failed", code: err?.code },
       { status: 500 }
     );
   }
