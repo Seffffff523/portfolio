@@ -19,6 +19,14 @@ export default function ProjectsSection() {
       href: "https://www.mata.ph/mactannewtown",
     },
     {
+      title: "Virtual Tour APK - android offline",
+      description:
+        "I developed an APK builder using Java to automate the process of packaging an Android application. The tool prepares the necessary files and build structure required for an Android app. After implementing the builder, I opened and ran the project in Android Studio, where it was compiled and built into a final APK file that can be installed and run on Android devices.",
+      stack: "JAVA , XML , HTML",
+      image: "/images/APK.png",
+      href: "",
+    },
+    {
       title: "BFP Fire Simulation",
       description:
         "The BFP Fire Simulation is an interactive game that teaches people what to do during a fire emergency through realistic, hands-on scenarios. It makes fire safety more engaging and memorable than traditional lectures, especially for those who learn better by playing",
