@@ -19,7 +19,7 @@ export default function ProjectsSection() {
       href: "https://www.mata.ph/mactannewtown",
     },
     {
-      title: "Virtual Tour APK - android offline",
+      title: "Virtual Tour APK - Android Offline",
       description:
         "I developed an APK builder using Java to automate the process of packaging an Android application. The tool prepares the necessary files and build structure required for an Android app. After implementing the builder, I opened and ran the project in Android Studio, where it was compiled and built into a final APK file that can be installed and run on Android devices.",
       stack: "JAVA , XML , HTML",
