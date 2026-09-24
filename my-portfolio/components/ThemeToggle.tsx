@@ -31,7 +31,9 @@ export default function ThemeToggle() {
     localStorage.setItem("theme", newTheme);
   };
 
-  if (!mounted) return null;
+  if (!mounted) {
+    return <div className="btn btn-ghost btn-circle border border-base-300 opacity-0" aria-hidden />;
+  }
 
   return (
     <button

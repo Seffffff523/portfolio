@@ -7,6 +7,7 @@ import ProjectsSection from '@/components/home/Project';
 import ExperienceSection from '@/components/home/Experience';
 import ContactSection from '@/components/home/Contact';
 import ScrollReveal from '@/components/ui/ScrollReveal';
+import ThemeToggle from '@/components/ThemeToggle';
 
 
 export default function HomePage() {
@@ -29,33 +30,51 @@ export default function HomePage() {
   };
 
   useEffect(() => {
-    const sections = navItems
-      .map((n) => document.getElementById(n.id))
-      .filter(Boolean) as HTMLElement[];
+    // Ratio-based IntersectionObserver thresholds can never be met by sections
+    // taller than the observed band, so the active item is derived from scroll
+    // position instead.
+    const resolveActive = () => {
+      const line = window.innerHeight * 0.3;
 
-    if (!sections.length) return;
+      const atBottom =
+        window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
+      if (atBottom) return navItems[navItems.length - 1].id;
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((e) => e.isIntersecting)
-          .sort((a, b) => (b.intersectionRatio ?? 0) - (a.intersectionRatio ?? 0));
+      let current = navItems[0].id;
+      for (const { id } of navItems) {
+        const el = document.getElementById(id);
+        if (el && el.getBoundingClientRect().top <= line) current = id;
+      }
+      return current;
+    };
 
-        const id = visible[0]?.target?.id;
-        if (id) setActiveId(id);
-      },
-      { threshold: [0.15, 0.25, 0.35, 0.5, 0.65], rootMargin: '-20% 0px -55% 0px' }
-    );
+    let frame = 0;
+    const onScroll = () => {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(() => setActiveId(resolveActive()));
+    };
 
-    sections.forEach((s) => observer.observe(s));
-    return () => observer.disconnect();
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    return () => {
+      cancelAnimationFrame(frame);
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', onScroll);
+    };
   }, [navItems]);
 
   return (
     
     <main className="min-h-screen bg-base-100 text-base-content scroll-smooth">
-      <div className="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 lg:grid-cols-[320px_1fr] gap-16">
-        <aside className="lg:sticky lg:top-8 self-start">
+      {/* Stays pinned to the top-right corner while the page scrolls */}
+      <div className="sticky top-0 z-50 flex h-16 items-center justify-end px-6 md:px-10">
+        <ThemeToggle />
+      </div>
+
+      <div className="max-w-7xl mx-auto px-6 pb-12 grid grid-cols-1 lg:grid-cols-[360px_1fr] gap-16">
+        {/* h-16 above is subtracted so the column ends flush with the viewport */}
+        <aside className="lg:sticky lg:top-16 lg:h-[calc(100vh-4rem)] self-start lg:pb-12">
           <Sidebar navItems={navItems} activeId={activeId} onNavClick={scrollTo} />
         </aside>
 
