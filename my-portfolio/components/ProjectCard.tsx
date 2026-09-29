@@ -48,6 +48,9 @@ export default function ProjectCard({ project }: { project: Project }) {
 
       <div className="px-6 pb-6">
         <h3 className="text-2xl font-semibold text-amber-400">{project.title}</h3>
+        {project.role && (
+          <p className="mt-1 text-sm font-medium text-neutral-400">{project.role}</p>
+        )}
         <p className="mt-3 text-sm leading-relaxed text-neutral-300/80">
           {project.description}
         </p>
