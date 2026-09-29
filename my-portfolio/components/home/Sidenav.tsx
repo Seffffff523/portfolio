@@ -1,6 +1,24 @@
 'use client';
 
+import type { IconType } from 'react-icons';
+import { FaFacebookF, FaGithub, FaLinkedinIn } from 'react-icons/fa';
+
 type NavItem = { id: string; label: string };
+
+const socials: { label: string; href: string; icon: IconType }[] = [
+  {
+    label: 'LinkedIn',
+    href: 'https://www.linkedin.com/in/yousef-laurence-abayan-12912b316/',
+    icon: FaLinkedinIn,
+  },
+  { label: 'Personal GitHub', href: 'https://github.com/Seffffff523', icon: FaGithub },
+  { label: 'Company GitHub', href: 'https://github.com/Owen-newO', icon: FaGithub },
+  {
+    label: 'Facebook',
+    href: 'https://www.facebook.com/youseflaurence.abayan.52',
+    icon: FaFacebookF,
+  },
+];
 
 export default function Sidebar({
   navItems,
@@ -27,7 +45,7 @@ export default function Sidebar({
 
           <div>
             <h1 className="text-3xl font-bold leading-tight">Yousef Laurence Abayan</h1>
-            <p className="text-lg text-base-content/70 mt-1">Front End Developer</p>
+            <p className="text-lg text-base-content/70 mt-1">Back-End Developer (Aspiring)</p>
           </div>
         </div>
 
@@ -78,10 +96,19 @@ export default function Sidebar({
 
       {/* Socials */}
       <div className="flex gap-4">
-        <span className="btn btn-circle btn-outline btn-sm">G</span>
-        <span className="btn btn-circle btn-outline btn-sm">in</span>
-        <span className="btn btn-circle btn-outline btn-sm">gh</span>
-        <span className="btn btn-circle btn-outline btn-sm">f</span>
+        {socials.map(({ label, href, icon: Icon }) => (
+          <div key={href} className="tooltip" data-tip={label}>
+            <a
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={label}
+              className="btn btn-circle btn-outline btn-sm"
+            >
+              <Icon className="h-4 w-4" />
+            </a>
+          </div>
+        ))}
       </div>
     </aside>
   );
