@@ -76,7 +76,7 @@ export const projects: Project[] = [
     role: "Back-end Developer",
     description:
       "The ExperienceCebu Booking System (experiencecebu.ph) provides a streamlined platform for discovering and booking tourism experiences across Cebu. Users can easily browse available tours and activities, view detailed information, select their preferred schedules, and complete their bookings through a convenient online process. The system also provides efficient booking management, allowing administrators to manage tour packages, schedules, availability, customer reservations, and booking details, ensuring a smooth and organized experience for both tourists and tourism operators.",
-    stack: "Next.js, React , Tailwind CSS , Supabase ,Firebase",
+    stack: "Next.js, React , Tailwind CSS , Supabase ,Firebase (hosting)",
     image: "/images/experiencecebu.gif",
     href: "https://experiencecebu.ph/",
     prio: true,
@@ -86,7 +86,7 @@ export const projects: Project[] = [
     role: "Front-end Developer",
     description:
       "Visit Central Visayas (r7-tourism.web.app) is a tourism website designed to showcase the destinations, attractions, events, culture, and experiences across Central Visayas. As the Front-End Developer, I was responsible for developing and maintaining the user-facing interface, implementing responsive layouts, integrating tourism content and interactive features, and ensuring a smooth and accessible browsing experience across desktop and mobile devices. The platform provides visitors with an organized and visually engaging way to discover what Central Visayas has to offer.",
-    stack: "Next.js, React , Tailwind CSS , Supabase ,Firebase",
+    stack: "Next.js, React , Tailwind CSS , TypeScript 5 , Firebase (hosting)",
     image: "/images/visitcentralvisayas.gif",
     href: "https://r7-tourism.web.app/",
     prio: true,
