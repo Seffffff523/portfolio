@@ -91,6 +91,29 @@ export const projects: Project[] = [
     href: "https://r7-tourism.web.app/",
     prio: true,
   },
+
+  {
+    title: "Gas Management System",
+    role: "Front-end Developer",
+    description:
+      "The Gas Management System is designed to help address future fuel shortages by providing fair and controlled gasoline distribution. Developed in collaboration with the Cebu City Mayor’s office, the system assigns weekly fuel limits to users, tracks gasoline consumption, and helps prevent hoarding while ensuring that available fuel is distributed efficiently and responsibly.",
+    stack: "React ,  Tailwind CSS , firestore , Firebase (hosting)",
+    image: "/images/agas.gif",
+    href: "https://www.agas.ph/",
+    prio: true,
+  },
+
+  {
+    title: "Seaza Booking Registration",
+    role: "Front-end Developer",
+    description:
+      "The Cebu Safari SEAZA Event Registration System is an online platform developed to manage participant registration for the upcoming SEAZA event at Cebu Safari. The system streamlines attendee registration, collects essential participant information, and helps organizers efficiently manage and monitor registrations leading up to the event.",
+    stack: "React ,  TypeScript 5, Tailwind CSS ",
+    image: "/images/seaza.gif",
+    href: "https://booking.mata.ph/",
+    prio: true,
+  },
+
 ];
 
 export const featuredProjects = projects.filter((p) => p.prio);
