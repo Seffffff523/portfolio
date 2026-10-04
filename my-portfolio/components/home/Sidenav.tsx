@@ -45,7 +45,7 @@ export default function Sidebar({
 
           <div>
             <h1 className="text-3xl font-bold leading-tight">Yousef Laurence Abayan</h1>
-            <p className="text-lg text-base-content/70 mt-1">Back-End Developer (Aspiring)</p>
+            <p className="text-lg text-base-content/70 mt-1">Full-Stack Developer (Aspiring)</p>
           </div>
         </div>
 
